@@ -1,0 +1,86 @@
+/* ==UserStyle==
+@name           Reddit Atkinson Hyperlegible
+@namespace      github.com/joshcode/styles
+@version        1.0.1
+@description    Hacky solution to get most text on reddit to use Atkinson Hyperlegible, a font designed to be, as the name implies, very legible, especially for people who are visually impaired
+@author         JoshCode
+@homepageURL    https://github.com/JoshCode/userstyle-reddit-hyperlegible
+@preprocessor   less
+@license        Apache-2.0
+==/UserStyle== */
+@-moz-document domain("reddit.com") {
+    body {
+        font-size: medium;
+    }
+
+    body,
+    .comment .entry,
+    .comment .child,
+    #search input[type="text"] {
+        font-family: "Atkinson Hyperlegible";
+    }
+    
+    .link .entry {
+        font-size: 0.75em;
+    }
+
+    .content .usertext-body {
+        p,
+        ul,
+        li {
+            font-family: "Atkinson Hyperlegible";
+        }
+
+        p,
+        .md li li,
+        .md li p,
+        .md ul li {
+            font-size: 1.1em;
+        }
+    }
+    
+    .comment {
+        font-size: 1em !important;
+        // Yes, !important is dirty, but I have encountered subreddits using !important here. It is necessary to overwrite their !important
+        // Not using it would result in comments becoming smaller and smaller, which is a fun effect to find out about, but illegible
+    }
+
+    .comment .entry {
+        // .entry,
+        // .child,
+        // .tagline {
+        //     font-size: 1em;
+        // }
+
+        .tagline {
+            font-size: 0.8em;
+        }
+        
+        .flat-list.buttons {
+            font-size: 0.85em;
+            font-family: "Atkinson Hyperlegible" !important;
+            // Yes, !important is dirty, but I have encountered subreddits using !important here. It is necessary to overwrite their !important
+        }
+    }
+
+    .link .title, .morelink {
+        font-size: calc(1em * 1.23);
+    }
+
+    .tagline {
+        font-size: calc(1em * 1.03);
+    }
+    
+    #header-bottom-left {
+        font-size: 0.9em;
+    }
+    
+    #header-bottom-right {
+        font-size: 0.8em
+    }
+    
+    #sr-header-area {
+        font-size: 0.76em
+    }
+
+}
